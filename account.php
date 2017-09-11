@@ -32,16 +32,20 @@
              
 
              <div style="float:right;">
-            <a href="logout.php?logout">Sign Out</a>
-</div>
+            <a href="logout.php?logout">Sign Out</a> </div>
+
 </div>
 
 <?php
 $user_id= $_GET["id"];
-echo "<h1>".$user_id."</h1>";
+
   $res=mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $user_id);
  $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
- echo $userRow['userName']; 
+ echo $userRow['userName'];
+ echo " | ";
+ echo $userRow['userLastname'];
+  echo " | ";
+ echo $userRow['userEmail']; 
             ?>
          
    

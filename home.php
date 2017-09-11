@@ -25,7 +25,7 @@
 
 <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
 </head>
-<body>
+<body >
 <div class="acc">
 
             Hi' <?php echo $userRow['userEmail']; ?>
@@ -34,32 +34,23 @@
 <div style="float:right;">
 
             <a href="logout.php?logout">Sign Out</a>
-</div>
+
 
 <?php echo  "<br>" . "<a href='Account.php?id=" . 
-		       $userRow["userId"] . 
-		       "'>". "Account Details"  . "</a>"?>
+           $userRow["userId"] . 
+           "'>". "Account Details"  . "</a>"?>
 
 </div>
 
-<?php
 
-echo "<div class=container>";
-$sql = "SELECT * FROM books";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-
-while($row = $result->fetch_assoc()){
-       echo "<div class='row'>" . 
+<br>
+<br>
+<br>
 
 
-       "<div class='col-md-1'>" . "</div>" . "<div class='col-md-10 classA'>" ."<div class='table'>" . "<table class='table'>" ."<tbody>" . "<tr>" . "<td>" ."Titel: " . $row["title"] . "</td>" . "<td>" . " Author: " . $row["author"] . "</td>" . "<td>" . " ISBN: " . $row["isbn"] . "</td>" . "<td>" . "Description: " .  $row["description"] . "</td>" . "<td>" ." Status: " . $row["status"] . "</td>" . "<td>" . "<img style='width:100px; height:100px' src='" . $row["img"] . "'>" . "</td>" . "</tr>" . "</tbody>". "</table>". "</div>" . "</div>" . "<div class='col-md-1'>" . "</div>" . "</div>";
- }
-}else {
-	echo "0 results";
-}
 
-?>
+
+<a href="books_list.php">list of all books</a>
 
    
          
